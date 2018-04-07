@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-
+	linkedList()
 }
 
 func linkedList() {
@@ -16,10 +16,24 @@ func linkedList() {
 	L.Insert("b") // b -> a
 	L.Insert("c") // c -> b -> a
 	L.Insert("d") // d -> c -> b -> a
-	fmt.Println(L.ToString())
+	// fmt.Println(L.ToString())
 
 	R := L.Reverse()
+	// fmt.Println(R.ToString())
+
+	R.Delete("c") //a -> b -> d
 	fmt.Println(R.ToString())
+
+	R.Delete("a") // b-> d
+	fmt.Println(R.ToString())
+
+	R.Delete("d") // b
+	fmt.Println(R.ToString())
+
+	R.Delete("z") // b
+	fmt.Println(R.ToString())
+
+	R.Delete("b") // empty
 }
 
 func arraySlice() {
