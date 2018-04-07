@@ -7,7 +7,11 @@ import (
 )
 
 func main() {
-	linkedList()
+}
+
+func arraySlice() {
+	ds.ArrayBasics()
+	ds.SliceBasics()
 }
 
 func linkedList() {
@@ -36,7 +40,16 @@ func linkedList() {
 	R.Delete("b") // empty
 }
 
-func arraySlice() {
-	ds.ArrayBasics()
-	ds.SliceBasics()
+func stack() {
+	S := ds.Stack{}
+	S.Push("fox")
+	S.Push("brown")
+	S.Push("quick")
+
+	fmt.Println(S.ToString()) // quick brown fox
+
+	S.Pop()                   //brown fox
+	S.Pop()                   // fox
+	S.Push("lazy")            // lazy fox
+	fmt.Println(S.ToString()) // lazy fox
 }
