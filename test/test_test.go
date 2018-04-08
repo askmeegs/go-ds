@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func EchoSolver(s string) (string, error) {
-	return s, nil
+func EchoSolver(s string) string {
+	return s
 }
 
 func TestSolve(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 )
 
 // a solver is a function that generates an answer to a programming question
-type Solver func(string) (string, error)
+type Solver func(string) string
 
 // f = test case file
 func SolveTestfile(f string, s Solver) error {
@@ -20,12 +20,13 @@ func SolveTestfile(f string, s Solver) error {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
+	scanner.Scan() //trash 1st line (# of test cases)
+	i := 1
 	for scanner.Scan() {
-		result, err := s(scanner.Text())
-		if err != nil {
-			return fmt.Errorf("Test case [%s] produced err: %v", scanner.Text(), err)
-		}
+		// fmt.Printf("Solving case #%d\n", i)
+		result := s(scanner.Text())
 		output = append(output, result)
+		i = i + 1
 	}
 	return writeTestResults(output, fmt.Sprintf("OUT_%s", f))
 }
@@ -37,7 +38,7 @@ func writeTestResults(output []string, outfile string) error {
 		return err
 	}
 	for i, o := range output {
-		line := fmt.Sprintf("Case #%d: %s\n", i, o)
+		line := fmt.Sprintf("Case #%d: %s\n", i+1, o)
 		_, err := f.WriteString(line)
 		if err != nil {
 			return err
