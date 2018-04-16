@@ -49,4 +49,4 @@ mutex = a lock (ensures only one thread can access some shared resource) vs. sem
 
 ## discrete math
 
-power set = all possible subsets of the originating set including itself and the empty set. # sets in the power set is 2^n where n is the length of the original set. example: {a,b,c} --> Power set is: {{}, {a}, {b}, {c}, {ab}, {bc}, {ac}, {abc}} or 2^3 = len 8 
+power set = all possible subsets of the originating set including itself and the empty set. # sets in the power set is 2^n where n is the length of the original set. example: {a,b,c} --> Power set is: {{}, {a}, {b}, {c}, {ab}, {bc}, {ac}, {abc}} or 2^3 = len 8
