@@ -9,11 +9,9 @@ import (
 /*
 Test valid parentheses
 Acceptable chars: () {} []
-
 */
 
 func main() {
-
 	t1 := "(hello!)"
 	fmt.Println(isValidParen(t1))
 
@@ -22,7 +20,6 @@ func main() {
 
 	t3 := "it'(s (compl(c)at(ed).))"
 	fmt.Println(isValidParen(t3))
-
 }
 
 // Iterative with stack, O(n) time, O(n) space
